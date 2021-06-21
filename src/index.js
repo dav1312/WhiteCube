@@ -222,7 +222,7 @@ var queueBusy = false;
 
     const logChannel = serverEntry.log_channel;
 
-    var values = [
+    var valuespush = [
       {
         name: "Author",
         value: msg.author.id,
@@ -236,12 +236,23 @@ var queueBusy = false;
     if (position) {
       position = position.toLowerCase();
       if (positions.has(position)) {
-        values.push({
+        valuespush.push({
           name: "Position",
           value: position,
         });
       }
     }
+
+    var valuesembed = [
+      {
+        name: "Author",
+        value: `${msg.author.mention} (${msg.author.id})`,
+      },
+      {
+        name: "Background",
+        value: url,
+      },
+    ];
 
     const request = await bot.createMessage(logChannel, {
       embed: {
@@ -250,7 +261,7 @@ var queueBusy = false;
         image: {
           url: url,
         },
-        fields: values,
+        fields: valuesembed,
       },
     });
 
