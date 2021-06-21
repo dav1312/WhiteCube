@@ -257,8 +257,8 @@ var queueBusy = false;
     request.addReaction("✅");
     request.addReaction("❌");
 
-    return `Request created!
-You can view and cancel your request at <https://discord.com/channels/${msg.guildID}/${logChannel}/${request.id}>.`;
+    return `<@${bgData["Author"]}> Request created!
+You can view and cancel your request [here](https://discord.com/channels/${msg.guildID}/${logChannel}/${request.id}).`;
   });
 
   bot.registerCommand("remove", async (msg, args) => {
