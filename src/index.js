@@ -309,11 +309,11 @@ You can view and cancel your request [here](https://discord.com/channels/${msg.g
         });
 
         queueBusy = false;
-        return "Your BG has been removed!";
+        return "<@${bgData["Author"]}> Your BG has been removed!";
       }
     } else {
       queueBusy = false;
-      return "You didn't have a BG for me to remove in the first place.";
+      return "<@${bgData["Author"]}> You didn't have a BG for me to remove in the first place.";
     }
   });
 
@@ -353,7 +353,7 @@ You can view and cancel your request [here](https://discord.com/channels/${msg.g
 
     if (emoji.name == "❌") {
       msg.edit({
-        content: `Request for <@${bgData["Author"]}> denied by moderator.`,
+        content: `Request for <@${bgData["Author"]}> denied by a moderator.`,
         embed: null,
       });
     }
