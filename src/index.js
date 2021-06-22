@@ -256,7 +256,7 @@ var queueBusy = false;
 
     const request = await bot.createMessage(logChannel, {
       embed: {
-        title: "USRBG Request",
+        title: "Pending USRBG Request",
         color: 16777215,
         image: {
           url: url,
